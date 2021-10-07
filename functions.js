@@ -21,8 +21,17 @@ Array.prototype.myMap = function(callbackfxn) {
 };
 
 // FILTER //
-Array.prototype.myFilter = function() {
-
+Array.prototype.myFilter = function(callbackfxn) {
+    let arr = []; 
+    for(let i = 0; i< this.length; i++){
+        if(this[i] === undefined){
+            continue; 
+        }
+        if(callbackfxn(this[i], i, this)){
+            arr.push(this[i]); 
+        }
+    }
+    return arr; 
 };
 
 // SOME //
@@ -69,3 +78,4 @@ Object.grabKeys = function() {
 Object.grabValues = function() {
 
 };
+
