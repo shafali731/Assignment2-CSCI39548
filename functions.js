@@ -93,8 +93,29 @@ Array.prototype.myIncludes = function(searchElement, fromIndex) {
 };
 
 // INDEXOF //
-Array.prototype.myIndexOf = function() {
-
+Array.prototype.myIndexOf = function(searchElement, fromIndex) {
+    if(fromIndex >= this.length){
+        return -1; 
+    }
+    if(fromIndex < 0){
+        fromIndex = fromIndex + this.length; 
+    }
+    if(fromIndex === undefined){
+        for(let i =0; i< this.length; i++){
+            if(searchElement === this[i]){
+                return i; 
+            }
+        }
+        return -1; 
+    }
+    else{
+        for(let i =fromIndex; i< this.length; i++){
+            if(searchElement === this[i]){
+                return i; 
+            }
+        }
+        return -1; 
+    }
 };
 
 // PUSH //
@@ -116,4 +137,3 @@ Object.grabKeys = function() {
 Object.grabValues = function() {
 
 };
-
