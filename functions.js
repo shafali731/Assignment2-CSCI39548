@@ -75,7 +75,7 @@ Array.prototype.myIncludes = function(searchElement, fromIndex) {
     }
     if(fromIndex=== undefined || fromIndex < 0){
         for(let i = 0; i< this.length; i++){
-            if(this[i]== searchElement){
+            if(this[i]=== searchElement || (Number.isNaN(searchElement) && Number.isNaN(this[i]))){
                 return true;
             }
         }
@@ -83,7 +83,7 @@ Array.prototype.myIncludes = function(searchElement, fromIndex) {
     }
     else{
         for(let i = fromIndex; i< this.length; i++){
-            if(this[i]== searchElement){
+            if(this[i]=== searchElement|| (Number.isNaN(searchElement) && Number.isNaN(this[i]))){
                 return true;
             }
         }
