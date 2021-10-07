@@ -35,8 +35,16 @@ Array.prototype.myFilter = function(callbackfxn) {
 };
 
 // SOME //
-Array.prototype.mySome = function() {
-
+Array.prototype.mySome = function(callbackfxn) {
+    for(let i = 0; i < this.length; i++){
+        if(this[i] === undefined){
+            continue; 
+        }
+        if(callbackfxn(this[i], i, this)){
+            return true; 
+        } 
+    }
+    return false; 
 };
 
 // EVERY //
