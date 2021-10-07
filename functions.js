@@ -119,8 +119,19 @@ Array.prototype.myIndexOf = function(searchElement, fromIndex) {
 };
 
 // PUSH //
-Array.prototype.myPush = function() {
-
+Array.prototype.myPush = function(...elements) {
+    let lastInd = this.length; 
+    let indElements = 0; 
+    for(let i = lastInd; i < lastInd + elements.length; i++){
+        if(indElements < elements.length){
+            this[i] = elements[indElements]
+            indElements++; 
+        }
+        else{
+            return this.length;
+        }
+    }
+    return this.length;
 };
 
 // LASTINDEXOF //
@@ -137,3 +148,5 @@ Object.grabKeys = function() {
 Object.grabValues = function() {
 
 };
+
+
