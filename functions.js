@@ -49,7 +49,15 @@ Array.prototype.mySome = function(callbackfxn) {
 
 // EVERY //
 Array.prototype.myEvery = function() {
-
+    for(let i = 0; i < this.length; i++){
+        if(this[i] === undefined){
+            continue; 
+        }
+        if(!(callbackfxn(this[i], i, this))){
+            return false; 
+        } 
+    }
+    return true; 
 };
 
 // REDUCE //
