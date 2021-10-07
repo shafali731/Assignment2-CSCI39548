@@ -1,6 +1,11 @@
 // FOR EACH //
-Array.prototype.myEach = function() {
-
+Array.prototype.myEach = function(callbackfxn) {
+    for(let i = 0; i < this.length; i++){
+        if(this[i] === undefined){
+            continue; 
+        }
+        callbackfxn(this[i], i, this); 
+    }
 };
 
 // MAP //
@@ -57,3 +62,4 @@ Object.grabKeys = function() {
 Object.grabValues = function() {
 
 };
+
