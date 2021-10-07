@@ -172,7 +172,12 @@ Object.grabKeys = function(obj) {
 };
 
 // VALUES //
-Object.grabValues = function() {
+Object.grabValues = function(obj) {
+    let arr = []; 
+    for(let objKey in obj){
+        arr.push(obj[objKey]); 
+    }
+    return arr; 
 
 };
 
