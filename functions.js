@@ -61,8 +61,16 @@ Array.prototype.myEvery = function() {
 };
 
 // REDUCE //
-Array.prototype.myReduce = function() {
-
+Array.prototype.myReduce = function(callbackfxn, initialVal) {
+    let sum = initialVal; 
+    for(let i = 0; i< this.length; i++){
+        if(initialVal === undefined && i ==0){
+            sum = this[i]; 
+            continue;
+        }
+        sum = callbackfxn(sum, this[i], i, this); 
+    }
+    return sum; 
 };
 
 // INCLUDES //
@@ -180,4 +188,6 @@ Object.grabValues = function(obj) {
     return arr; 
 
 };
+
+
 
