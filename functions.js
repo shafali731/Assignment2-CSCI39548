@@ -9,8 +9,15 @@ Array.prototype.myEach = function(callbackfxn) {
 };
 
 // MAP //
-Array.prototype.myMap = function() {
-
+Array.prototype.myMap = function(callbackfxn) {
+    let arr =[]; 
+    for(let i = 0; i < this.length; i++){
+        if(this[i]===undefined){
+            continue; 
+        }
+        arr.push(callbackfxn(this[i], i, this)); 
+    }
+    return arr; 
 };
 
 // FILTER //
@@ -62,4 +69,3 @@ Object.grabKeys = function() {
 Object.grabValues = function() {
 
 };
-
